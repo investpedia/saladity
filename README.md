@@ -12,6 +12,8 @@ clean source of : [sol blog](https://sol-app.github.io/blog/)
 
 - **pages -> post -> [slug].js** : at line **47** change link `href="/blog"` to `href="/your-repo-name"` . if your repo name is `blog` then no need to change.
 
+- look at `onst BLOG_TITLE = "SOL BLOG";` from: layout, slug, index, resume & change `sol blog` to your blog name.
+
 - **posts** : look at `How-To-Change.md` -> make your blog by `markdown` like this and use it as post-blog.
 
 ## more
