@@ -5,7 +5,7 @@ clean source of : [sol blog](https://sol-app.github.io/blog/)
 `npx create-next-app@latest nextjs-blog --use-npm --example "https://github.com/mosi-arch/blog-src"`
 
 - **pages -> index.js** : 
-- - change line **8, 9** to yyour blog name & description.
+- - change line **8, 9** to your blog name & description.
 - - change content of line **40 to 79** to youre custom info.
 
 - **pages -> resume.js** : this file hard coded. you would remove file or change content to your self data.
