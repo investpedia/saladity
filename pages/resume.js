@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import Head from 'next/head';
-
+const BLOG_TITLE = "SOL BLOG";
 // hard coded information, you can change to yours
 export default function Home({ posts }) {
   return (
