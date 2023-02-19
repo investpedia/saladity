@@ -1,7 +1,7 @@
 clean source of : [sol blog](https://sol-app.github.io/blog/)
 
 # HOW TO CHANGE, USE
-- fork this repo : \
+- fork this repo or : \
 `npx create-next-app@latest nextjs-blog --use-npm --example "https://github.com/mosi-arch/blog-src"`
 
 - **pages -> index.js** : 
