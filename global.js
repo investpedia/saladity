@@ -2,11 +2,12 @@
 BLOG_TITLE =        "SOLIDITY STEPS";
 BLOG_DESCRIPTION =  "Solidity & Web3 from zero to hero";
 BLOG_MAIL =         "mailto=mosipvp@gmail.com";
-HOME =              "https://mosi-arch.github.io/saladity/";
+HOME =              "https://Define.me";
 BLOG_DONATION =     "https://sol-app.github.io/Donation/";
 BLOG_SOL =          "https://sol-app.github.io/blog/";
 GITHUB =            "https://github.com/mosi-sol";
 LINKEDIN =          "https://www.linkedin.com/in/moslem-abbasi/";
+
 
 /*
 example:

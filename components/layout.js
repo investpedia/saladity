@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import Image from 'next/image';
-import { BLOG_TITLE , BLOG_DONATION } from '../global';
 
+import { BLOG_TITLE , BLOG_DONATION } from '../global';
 const lin = global.BLOG_DONATION;
 const tit = global.BLOG_TITLE;
 
