@@ -51,7 +51,7 @@ export default function Home({ posts }) {
                   <div key={slug} className='break-inside px-1 py-1 my-0.5 bg-gradient-to-l from-blue-700 to-sky-500 hover:bg-gradient-to-l hover:from-blue-800 hover:to-sky-600 rounded-lg '>
                       <Head>
                         <title>{gtit}</title>   
-                        <link rel="icon" href="@@baseUrl@@/images/000.png" />
+                        <link rel="icon" href="@@baseUrl@@/images/solidity.webp" />
                         <meta name="robots" content="all" />
                         <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
                         <meta name="google" content="notranslate" key="notranslate" />
