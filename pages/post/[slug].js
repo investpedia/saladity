@@ -66,8 +66,6 @@ export default function PostPage({ frontmatter, content }) {
             <span className='text-gray-500 mx-2'>/ Solidity from scratch /</span>
             <span className='text-gray-500'>{frontmatter.id} - {frontmatter.title}</span>
         </nav>
-
-      </div>
-      
+     </div>      
   );
 }
