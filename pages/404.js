@@ -40,3 +40,93 @@ const NotFoundPage = () => {
 };
 
 export default NotFoundPage;
+
+/*
+Using Next.js 9 or above you can get query parameters:
+
+With router:
+
+import { useRouter } from 'next/router'
+
+const Index = () => {
+  const router = useRouter()
+  const {id} = router.query
+
+  return(<div>{id}</div>)
+}
+With getInitialProps:
+
+const Index = ({id}) => {
+  return(<div>{id}</div>)
+}
+
+Index.getInitialProps = async ({ query }) => {
+  const {id} = query
+
+  return {id}
+}
+*/
+
+/*
+For stateless components
+import Link from 'next/link'
+const About = ({query}) => (
+  <div>Click <Link href={{ pathname: 'about', query: { name: 'leangchhean' }}}><a>here</a></Link> to read more</div>
+)
+
+About.getInitialProps = ({query}) => {
+  return {query}
+}
+
+export default About;
+
+For regular components
+class About extends React.Component {
+
+  static getInitialProps({query}) {
+    return {query}
+  }
+
+  render() {
+    console.log(this.props.query) // The query is available in the props object
+    return <div>Click <Link href={{ pathname: 'about', query: { name: 'leangchhean' }}}><a>here</a></Link> to read more</div>
+
+  }
+}
+*/
+
+/*
+// pages/about.js
+import Link from 'next/link'
+export default ({ url: { query: { name } } }) => (
+  <p>Welcome to About! { name }</p>
+)
+*/
+
+/*
+import React from "react";
+
+export async function getServerSideProps(context) {
+    const page = (parseInt(context.query.page) || 1).toString();
+    // Here we got the "page" query parameter from Context
+    // Default value is "1"
+  
+    const res = await fetch(`https://....com/api/products/?page=${page}`);
+    const products = await res.json();
+    return {props: {products: products.results}}
+    // will be passed to the page component as props
+  }
+
+const Page = (props) =>{
+    const products = props.products;
+    return (
+      <ul>
+        {products.map((product) => (
+            <li key={product.id}>{product.name}</li>
+        ))}
+      </ul>);
+}
+
+export default Page
+*/
+
