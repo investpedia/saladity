@@ -5,11 +5,14 @@ import Link from 'next/link';
 import Head from 'next/head';
 
 // change blog name and description 
-const BLOG_TITLE = "SOL BLOG";
-const BLOG_DESCRIPTION = "Solidity , Web3";
+import { BLOG_TITLE , BLOG_DESCRIPTION } from '../global';
+const gtit = global.BLOG_TITLE;
+const gdesc = global.BLOG_DESCRIPTION;
+
 
 // don`t touch`
 export async function getStaticProps() {
+  
   const files = fs.readdirSync('posts');
 
   const posts = files.map((fileName) => {
@@ -34,80 +37,35 @@ export default function Home({ posts }) {
   return (
     
     
-    <div className='flex justify-center flex justify-between'> 
+    <div className='justify-center'> 
       
-      {/* change "info" from line "40" to line "79" */}
-        <section className="mb-32 grid grid-cols lg:w-1/2 sm:w-full px-4 py-4 prose">
-
-              <div className="mb-12 lg:mb-0">
-                <div className="block rounded-lg shadow-lg px-6 py-12 lg:py-6 xl:py-12 md:px-12 lg:-mr-14 bg-blue-800">
-                <h2 className="text-2xl font-bold mb-3 text-black ">
-                  Who am i?
-                </h2>
-                <p className="text-orange-100 mb-8 pl-4 capitalize">
-                  i am a solidity engineer, smart contract developer, web3 programmer.
-                </p>
-                <p className='text-orange-100 mb-8 pl-4 text-sm capitalize'>
-                  Familier by: hardhat, foundry, remix, git, github, gitlab -- Agile, Scrum, Jira, Slack...
-                </p>
-                <p className='text-orange-100 mb-8 pl-4 text-sm'>
-                  Talks about: #btc, #ethereum, #solidity, #blockchain, and #cryptocommunity
-                </p>
-
-                <hr />
-
-                <h3 className="text-2xl font-bold mb-3 mt-8">My Vision</h3>
-                <h5 className="text-lg text-orange-600 font-bold mb-4 lg:mb-4 xl:mb-4">About blockchain</h5>
-                <p className="text-orange-100 mb-6 pl-4">
-                  Perhaps the most important human achievement is community! <br />
-                  But there is no clarity and transparency in any community like blockchain. <br />
-                  From transaction without intermediaries to fraud-free voting, all made possible through smart contracts on the blockchain platform. <br />
-                  In the blockchain community, democracy can be felt in the virtual community. <br />
-                  The most interesting point for me is this transparency, how about you? <hr />
-                </p>
-
-                <p className="font-bold mb-4 text-white">Reach me</p>
-                <p className="text-orange-500 mb-6 pl-4">
-                  at linktree: <small> https://linktr.ee/mosi.sol </small>
-                </p>
-
-                <hr />
-
-                </div>
-              </div>
-
-          </section>
- 
           <section className="">
-            <div class="md:masonry-2-col lg:masonry-3-col box-border mx-auto before:box-inherit after:box-inherit">
-              <h2 className='bg-orange-600 text-white text-center font-bold text-3xl w-full rounded border border-orange-500 shadow-2xl p-8'>
-                {BLOG_TITLE}
-                <p className='text-sm font-medium'>{BLOG_DESCRIPTION}</p>
-              </h2>
-        
+              <h1 className='bg-gradient-to-l from-purple-700 to-indigo-500 text-white text-center font-bold text-3xl w-full rounded shadow p-2'>
+                {gtit}
+                <p className='text-sm font-medium'>{gdesc}</p>
+              </h1>
+              {/* <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-2 my-12 px-4 box-border mx-auto before:box-inherit after:box-inherit"> */}
+            <div className="grid gap-2 md:grid-cols-2 lg:grid-cols-3 my-12 px-2 box-border mx-auto before:box-inherit after:box-inherit">
+              {/* <h2 className='my-2 shadow-xl text-2xl font-bold mx-auto bg-indigo-400 text-white p-2 rounded-lg'>{gdesc}</h2> */}
               {posts.map(({ slug, frontmatter }) => (
-                  <div key={slug} className='break-inside p-8 my-6 bg-gray-100 rounded-lg shadow-xl hover:shadow-2xl border border-gray-300'>
+                  <div key={slug} className='break-inside px-1 py-1 my-0.5 bg-gradient-to-l from-blue-700 to-sky-500 hover:bg-gradient-to-l hover:from-blue-800 hover:to-sky-600 rounded-lg '>
                       <Head>
-                        <title>{BLOG_TITLE}</title>   
-                        <link rel="icon" href="/favicon.ico" />
+                        <title>{gtit}</title>   
+                        <link rel="icon" href="@@baseUrl@@/images/000.png" />
                         <meta name="robots" content="all" />
                         <meta name="google" content="nositelinkssearchbox" key="sitelinks" />
                         <meta name="google" content="notranslate" key="notranslate" />
                         <meta name="description" content= "Auther: mosi-sol @ github. Solidity blog: web3, blockchain, solidity, evm, programming." />
                       </Head>
-                      
-                      <div>
-                        <Link href={`/post/${slug}`}><a>
-                          <h3 className='font-bold hover:text-blue-500 text-2xl'>{frontmatter.title} </h3>
-                        </a></Link> 
-                        <p className='text-gray-500'>{frontmatter.metaDesc}</p>
-                        <div className='flex justify-between'>
-                          <small className='text-orange-700'>{frontmatter.article}</small>
-                          <Link href={`/post/${slug}`}><a>
-                            <small className='font-light hover:text-blue-500 text-blue-800 text-sm'>Reade more </small>
-                          </a></Link> 
-                        </div>
-                      </div> 
+
+                      <article className='mx-4 h-12 md:h-12 lg:h-6'>
+                        <Link href={`/post/${slug}`}><a className='text-white hover:text-gray-300 flex justify-between'>
+                        <h3 className='text- font-bold'>{frontmatter.id} - {frontmatter.title}</h3>
+                        <p className='text-sm'>{frontmatter.auther}</p>
+                        </a></Link>
+                      </article>
+                      {/* {frontmatter.tag}{frontmatter.auther}{frontmatter.auther_bio}{frontmatter.modified_date} */}
+                      {/* {frontmatter.description}{frontmatter.id}{frontmatter.date}{frontmatter.article} */}
 
                   </div> 
                 ))}
